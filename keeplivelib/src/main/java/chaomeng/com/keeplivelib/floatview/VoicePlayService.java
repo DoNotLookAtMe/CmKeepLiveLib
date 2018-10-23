@@ -3,10 +3,14 @@ package chaomeng.com.keeplivelib.floatview;
 import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.Service;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.os.IBinder;
+import android.util.Log;
+import android.view.KeyEvent;
 
 import chaomeng.com.keeplivelib.R;
 
@@ -48,7 +52,7 @@ public class VoicePlayService extends Service implements MediaPlayer.OnCompletio
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (mediaPlayer == null) {
-            mediaPlayer = MediaPlayer.create(this, R.raw.lala);
+            mediaPlayer = MediaPlayer.create(this, R.raw.samsara);
             mediaPlayer.setVolume(0f, 1f);
             mediaPlayer.setOnCompletionListener(this);
         }
